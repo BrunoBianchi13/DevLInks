@@ -11,7 +11,7 @@ Programa exclusivo do Bruno Bianchi, para ensino de tecnologias WEB. <br/>
 </p>
 
 <p align="center">
-  <img alt="License" src="./assets/readmeft.jpg">
+  <img alt="" src="./assets/readmeft.jpg">
 </p>
 
 <br>
