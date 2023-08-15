@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --text-color: white;
+  --bg: #1d1d1d;
+  --stroke-color: #5e35b1;
+  --surface-color: #2d2d2d;
+  --surface-color-hover: #5e35b1;
+  --icon-color: #5e35b1;
+  --bd-clor: #5e35b1;
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+.light {
+  --text-color: white;
+  --bg: #5e35b1;
+  --stroke-color: #1d1d1d;
+  --surface-color: #2d2d2d;
+  --surface-color-hover: #5e35b1;
+  --icon-color: #1d1d1d;
+  --bd-clor: #1d1d1d;
+  --switch-bg-url: url(./assets/sun.svg);
+}
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+  background: var(--bg) no-repeat top center/cover;
+  height: 100vh;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  max-width: 588px;
+  width: 100%;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+  margin-top: 8px;
+}
+#profile img {
+  width: 160px;
+  border-radius: 50%;
+  border: 2px solid #5e35b1;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.5s;
+}
+
+ul li a:hover {
+  background-color: var(--surface-color-hover);
+  border: 1.5px solid var(--bd-clor);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 0;
+  font-size: 24px;
+}
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.5s;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background-color: var(--icon-color);
+}
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: 0;
+  background: white var(--switch-bg-url) no-repeat center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-back 0.4s;
+}
+
+.light #switch button {
+  animation: slide-in 0.4s forwards;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 9999px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0%;
+  }
+}
